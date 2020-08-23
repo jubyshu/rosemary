@@ -1,0 +1,35 @@
+article {
+  max-width: 720px;
+  margin: 20px auto auto 20px;
+}
+div,
+img,
+ul,
+li {
+  border: 0;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  float: left;
+}
+
+h4 {
+  font-weight: 400;
+  margin: 5px auto;
+  padding: 0;
+}
+
+.douban-list ul li {
+  width: 80px;
+  float: left;
+  list-style: none outside none;
+}
+
+.douban-list ul li img {
+  width: 70px;
+  height: 100px;
+  border: solid 1px #ddd;
+}
