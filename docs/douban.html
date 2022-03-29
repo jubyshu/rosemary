@@ -1,0 +1,14 @@
+<article class="post">
+  <div id="douban">
+    <div id="book-reading-wrap"></div>
+    <div id="book-wish-wrap"></div>
+    <div id="book-read-wrap"></div>
+  </div>
+</article>
+<script src="main.js"></script>
+<script>
+  var dbapi = new DoubanApi();
+    $(document).ready(function() {
+      dbapi.show();
+    });
+</script>
