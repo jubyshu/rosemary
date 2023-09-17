@@ -17,6 +17,12 @@
       <p>レンガを敷いた坂道にある海沿いの店のピアノが　いつも</p>
       <p>心癒してくれた…　今も聴けるかな？</p>
       <hr>
+
+      <div>
+        <p><b>Happy to be with you for <span id="runtime"></span></b>😊</p>
+      </div>
+      <hr>
+      
       <h2>给你</h2>
       <p><i>2023-05-31 18:35:30+08:00</i></p>
       <p>
@@ -77,5 +83,21 @@
         我祈望着永远<br>
       </p>
     </article>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let dateBegin = new Date("2023/05/20 22:00:00");
+      let dateEnd = new Date();
+      let diffTime = dateEnd.getTime() - dateBegin.getTime();
+      let dayDiff = Math.floor(diffTime / (24*60*60*1000));
+      let a = diffTime % (24*60*60*1000);
+      let hourDiff = Math.floor(a / (60*60*1000));
+      let b = a % (60*60*1000);
+      let minuteDiff = Math.floor(b / (60*1000));
+      let c = b % (60*1000);
+      let secondDiff = Math.round(c / 1000);
+      let timeDiff = dayDiff + " days " + hourDiff + " hours " + minuteDiff + " minutes " + secondDiff + " seconds";
+      document.querySelector('#runtime').innerHTML = timeDiff;
+    });
+  </script>
   </body>
 </html>
