@@ -84,20 +84,22 @@
       </p>
     </article>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    setInterval(timeDiff, 1000);
+    document.addEventListener("DOMContentLoaded", timeDiff());
+    function timeDiff() {
       let dateBegin = new Date("2023/05/20 22:00:00");
       let dateEnd = new Date();
       let diffTime = dateEnd.getTime() - dateBegin.getTime();
       let dayDiff = Math.floor(diffTime / (24*60*60*1000));
-      let a = diffTime % (24*60*60*1000);
-      let hourDiff = Math.floor(a / (60*60*1000));
-      let b = a % (60*60*1000);
-      let minuteDiff = Math.floor(b / (60*1000));
-      let c = b % (60*1000);
-      let secondDiff = Math.round(c / 1000);
-      let timeDiff = dayDiff + " days " + hourDiff + " hours " + minuteDiff + " minutes " + secondDiff + " seconds";
+      diffTime -= dayDiff * 24 * 3600 * 1000;
+      let hourDiff = Math.floor(diffTime / (60*60*1000));
+      diffTime -= hourDiff * 3600 * 1000;
+      let minuteDiff = Math.floor(diffTime / (60*1000));
+      diffTime -= minuteDiff * 60 * 1000;
+      let secondDiff = Math.floor(diffTime / 1000);
+      let timeDiff = dayDiff + " days " + hourDiff + " hours " + minuteDiff + " minutes " + secondDiff + " seconds ";
       document.querySelector('#runtime').innerHTML = timeDiff;
-    });
+    }
   </script>
   </body>
 </html>
